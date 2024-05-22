@@ -8,28 +8,19 @@ let opcion = prompt("Seleccione la moneda a la que desea convertir:\n1 para Dól
 // Convertir la opción ingresada a un número entero
 opcion = parseInt(opcion);
 
-// Verificar si la opción es válida
-if (opcion !== 1 && opcion !== 2) {
-    alert("Opción no válida. Por favor, seleccione 1 para Dólares o 2 para Euros.");
-} else {
-    // Solicitar al usuario que ingrese el monto en quetzales
-    let quetzales = prompt("Ingrese el monto en quetzales:");
-    
-    // Convertir el monto ingresado a un número flotante
-    quetzales = parseFloat(quetzales);
-    
-    // Verificar si la conversión fue exitosa
-    if (isNaN(quetzales)) {
-        alert("Monto no válido. Por favor, ingrese un número.");
-    } else {
-        // Realizar la conversión según la opción seleccionada
-        let resultado;
-        if (opcion === 1) {
-            resultado = quetzales * tasaDolar;
-            alert(`${quetzales} quetzales son ${resultado.toFixed(2)} dólares.`);
-        } else if (opcion === 2) {
-            resultado = quetzales * tasaEuro;
-            alert(`${quetzales} quetzales son ${resultado.toFixed(2)} euros.`);
-        }
-    }
+
+// Solicitar al usuario que ingrese el monto en quetzales
+let quetzales = prompt("Ingrese el monto en quetzales:");
+
+// Convertir el monto ingresado a un número flotante
+quetzales = parseFloat(quetzales);
+
+// Realizar la conversión según la opción seleccionada
+let resultado;
+if (opcion === 1) {
+    resultado = quetzales * tasaDolar;
+    alert(`${quetzales} quetzales son ${resultado.toFixed(2)} dólares.`);
+} else if (opcion === 2) {
+    resultado = quetzales * tasaEuro;
+    alert(`${quetzales} quetzales son ${resultado.toFixed(2)} euros.`);
 }
